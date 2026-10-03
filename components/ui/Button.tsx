@@ -19,20 +19,20 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const base =
-    'inline-flex items-center justify-center font-montserrat font-semibold tracking-wider transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 select-none'
+    'inline-flex items-center justify-center font-montserrat font-semibold tracking-[0.12em] uppercase transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 select-none'
 
   const variants = {
-    gold: 'bg-gold text-white hover:bg-gold-hover shadow-gold hover:shadow-lg border border-gold hover:border-gold-hover',
+    gold: 'bg-gold text-gold-dark hover:bg-gold-hover shadow-btn hover:shadow-md',
     outline:
-      'bg-transparent border-2 border-white text-white hover:bg-white hover:text-purple-deep',
+      'bg-transparent border border-white/80 text-white hover:bg-white hover:text-purple-deep',
     ghost:
-      'bg-transparent text-gold hover:text-gold-hover underline-offset-4 hover:underline p-0',
+      'bg-transparent text-purple-heading hover:text-gold tracking-wider underline-offset-4 p-0 normal-case',
   }
 
   const sizes = {
     sm: 'px-5 py-2.5 text-xs rounded-full',
-    md: 'px-7 py-3.5 text-sm rounded-full',
-    lg: 'px-9 py-4 text-sm rounded-full',
+    md: 'px-7 py-3.5 text-xs sm:text-[13px] rounded-full',
+    lg: 'px-8 py-4 text-xs sm:text-[13px] rounded-full',
   }
 
   const classes = cn(base, variants[variant], variant !== 'ghost' ? sizes[size] : '', className)

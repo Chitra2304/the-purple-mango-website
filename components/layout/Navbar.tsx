@@ -120,7 +120,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 id="nav-contact-btn"
-                className="font-montserrat text-sm font-semibold bg-gold text-white px-6 py-2.5 rounded-full hover:bg-gold-hover transition-all duration-300 shadow-gold hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
+                className="font-montserrat text-xs sm:text-[13px] font-semibold tracking-[0.08em] uppercase bg-gold text-gold-dark px-6 py-2.5 rounded-full hover:bg-gold-hover transition-all duration-300 shadow-btn hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
               >
                 Contact Us
               </Link>

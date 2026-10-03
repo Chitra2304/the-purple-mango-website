@@ -43,7 +43,7 @@ const SLIDES = [
   },
 ]
 
-const INTERVAL_MS = 5500
+const INTERVAL_MS = 5000
 
 export default function HeroCarousel() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -116,29 +116,29 @@ export default function HeroCarousel() {
           />
 
           {/* Slide Content */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-8">
-            <div className={`max-w-3xl transition-all duration-700 ${i === activeIndex ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-              {/* Headline */}
-              <h1 className="font-playfair text-white leading-tight mb-4">
-                <span className="block text-4xl sm:text-5xl lg:text-7xl font-medium drop-shadow-lg">
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
+            <div className={`w-full max-w-4xl lg:max-w-5xl transition-all duration-700 ${i === activeIndex ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              {/* Headline: Exactly 2 lines on desktop with elegant editorial contrast */}
+              <h1 className="font-playfair text-white leading-[1.12] mb-5 sm:mb-6">
+                <span className="block text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.75rem] font-medium tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]">
                   {slide.headline}
                 </span>
-                <em className="block text-5xl sm:text-6xl lg:text-8xl font-semibold not-italic italic drop-shadow-lg" style={{ fontStyle: 'italic' }}>
+                <span className="block text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.75rem] font-normal italic tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)] mt-1 lg:mt-2">
                   {slide.headlineItalic}
-                </em>
+                </span>
               </h1>
 
-              {/* Subtitle */}
-              <p className="font-montserrat text-white/85 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl mx-auto mb-8 drop-shadow-md">
+              {/* Subordinate Supporting Description */}
+              <p className="font-montserrat text-white/90 text-xs sm:text-sm md:text-[15px] lg:text-base font-light md:font-normal leading-[1.75] max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto mb-8 sm:mb-10 drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
                 {slide.subtitle}
               </p>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              {/* Clean Oval CTAs without glow */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
                 <Link
                   href="/contact"
                   id={`hero-book-btn-${i + 1}`}
-                  className="font-montserrat font-semibold text-sm tracking-wider bg-gold text-white px-8 py-4 rounded-full hover:bg-gold-hover transition-all duration-300 shadow-gold hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent min-w-[180px]"
+                  className="inline-flex items-center justify-center font-montserrat font-semibold text-xs sm:text-[13px] tracking-[0.14em] uppercase bg-gold text-gold-dark border border-transparent px-7 py-3.5 sm:px-8 sm:py-4 rounded-full hover:bg-gold-hover transition-all duration-300 shadow-btn hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white w-60 sm:w-auto sm:min-w-[210px] text-center select-none"
                   tabIndex={i !== activeIndex ? -1 : 0}
                 >
                   BOOK YOUR STAY
@@ -146,7 +146,7 @@ export default function HeroCarousel() {
                 <Link
                   href="/rooms"
                   id={`hero-explore-btn-${i + 1}`}
-                  className="font-montserrat font-semibold text-sm tracking-wider border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-purple-deep transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent min-w-[180px]"
+                  className="inline-flex items-center justify-center font-montserrat font-semibold text-xs sm:text-[13px] tracking-[0.14em] uppercase border border-white/80 hover:border-white text-white hover:bg-white/10 px-7 py-3.5 sm:px-8 sm:py-4 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white w-60 sm:w-auto sm:min-w-[210px] text-center select-none"
                   tabIndex={i !== activeIndex ? -1 : 0}
                 >
                   EXPLORE THE RESORT
@@ -160,7 +160,7 @@ export default function HeroCarousel() {
       {/* ── Arrow Controls ── */}
       <button
         onClick={goPrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white flex items-center justify-center hover:bg-white/25 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white z-10 hidden sm:flex"
+        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/20 backdrop-blur-sm border border-white/20 text-white flex items-center justify-center hover:bg-black/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white z-10 hidden sm:flex"
         aria-label="Previous slide"
       >
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
@@ -169,7 +169,7 @@ export default function HeroCarousel() {
       </button>
       <button
         onClick={goNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white flex items-center justify-center hover:bg-white/25 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white z-10 hidden sm:flex"
+        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/20 backdrop-blur-sm border border-white/20 text-white flex items-center justify-center hover:bg-black/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white z-10 hidden sm:flex"
         aria-label="Next slide"
       >
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
@@ -181,7 +181,7 @@ export default function HeroCarousel() {
       <div
         role="tablist"
         aria-label="Slide indicators"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-10"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10"
       >
         {SLIDES.map((slide, i) => (
           <button
@@ -191,11 +191,10 @@ export default function HeroCarousel() {
             aria-controls={`slide-${i + 1}`}
             aria-label={`Go to slide ${i + 1}`}
             onClick={() => goTo(i)}
-            className={`transition-all duration-400 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${
-              i === activeIndex
-                ? 'w-8 h-2.5 bg-gold'
-                : 'w-2.5 h-2.5 bg-white/50 hover:bg-white/80'
-            }`}
+            className={`transition-all duration-300 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${i === activeIndex
+              ? 'w-6 h-1 bg-white'
+              : 'w-1.5 h-1.5 bg-white/45 hover:bg-white/80'
+              }`}
           />
         ))}
       </div>

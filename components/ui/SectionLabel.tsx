@@ -18,16 +18,16 @@ export default function SectionLabel({
       {withLine && (
         <span
           className={cn(
-            'block h-px w-8 flex-shrink-0',
-            light ? 'bg-white/50' : 'bg-gold'
+            'block h-px w-7 flex-shrink-0',
+            light ? 'bg-white/40' : 'bg-purple-muted/50'
           )}
           aria-hidden="true"
         />
       )}
       <span
         className={cn(
-          'font-montserrat text-xs font-semibold tracking-[0.22em] uppercase',
-          light ? 'text-white/70' : 'text-gold-hover'
+          'font-montserrat text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase',
+          light ? 'text-white/70' : 'text-purple-muted'
         )}
       >
         {children}

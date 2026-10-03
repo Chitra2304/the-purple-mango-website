@@ -3,6 +3,8 @@ import HeroCarousel from '@/components/home/HeroCarousel'
 import WelcomeSection from '@/components/home/WelcomeSection'
 import RoomsSection from '@/components/home/RoomsSection'
 import DiningSection from '@/components/home/DiningSection'
+import ActivitiesSection from '@/components/home/ActivitiesSection'
+import GallerySection from '@/components/home/GallerySection'
 
 export const metadata: Metadata = {
   title: 'The Purple Mango | Luxury Resort in Lonavala, Western Ghats',
@@ -20,6 +22,8 @@ export default function HomePage() {
       <WelcomeSection />
       <RoomsSection />
       <DiningSection />
+      <ActivitiesSection />
+      <GallerySection />
     </>
   )
 }

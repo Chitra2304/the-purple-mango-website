@@ -47,9 +47,9 @@ export default function Footer() {
     >
       {/* Main footer grid */}
       <div className="container-resort py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-12 items-start">
           {/* ── Left: Contact Info ── */}
-          <div className="flex flex-col gap-7">
+          <div className="flex flex-col gap-8">
             {/* Logo */}
             <div>
               <div className="flex items-center gap-2.5 mb-3">
@@ -64,62 +64,64 @@ export default function Footer() {
                     opacity="0.4"
                   />
                 </svg>
-                <span className="font-playfair text-xl font-semibold text-white">The Purple Mango</span>
+                <span className="font-playfair text-2xl font-normal text-white tracking-tight">The Purple Mango</span>
               </div>
-              <p className="font-montserrat text-sm text-white/60 leading-relaxed max-w-xs">
+              <p className="font-montserrat text-[13.5px] sm:text-[14px] text-white/70 leading-[1.7] max-w-xs font-normal">
                 A luxury mountain retreat in the Western Ghats at Karla, Lonavala. Pure vegetarian. Unhurried pace.
               </p>
             </div>
 
             {/* Contact details */}
             <address className="not-italic flex flex-col gap-4">
-              <p className="font-montserrat text-xs font-semibold tracking-[0.18em] uppercase text-gold mb-1">
-                Get In Touch
-              </p>
-              <ContactItem
-                icon={
-                  <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                  </svg>
-                }
-                href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}
-                label={CONTACT.phone}
-              />
-              <ContactItem
-                icon={
-                  <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-                    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.123 1.523 5.855L.057 23.09a.75.75 0 00.93.875l5.174-1.61A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.721 9.721 0 01-4.975-1.364l-.356-.214-3.695 1.15 1.1-3.613-.233-.37A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z" />
-                  </svg>
-                }
-                href={`https://wa.me/${CONTACT.whatsapp.replace(/[^0-9]/g, '')}`}
-                label="WhatsApp Us"
-                external
-              />
-              <ContactItem
-                icon={
-                  <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                  </svg>
-                }
-                href={`mailto:${CONTACT.email}`}
-                label={CONTACT.email}
-              />
-              <ContactItem
-                icon={
-                  <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                  </svg>
-                }
-                href="https://maps.google.com/?q=The+Purple+Mango+Karla+Lonavala"
-                label={CONTACT.address}
-                external
-              />
+              <span className="font-montserrat text-[12px] sm:text-[13px] font-normal tracking-[0.24em] uppercase text-gold-light">
+                GET IN TOUCH
+              </span>
+              <div className="flex flex-col gap-3 pt-1">
+                <ContactItem
+                  icon={
+                    <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                    </svg>
+                  }
+                  href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}
+                  label={CONTACT.phone}
+                />
+                <ContactItem
+                  icon={
+                    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.123 1.523 5.855L.057 23.09a.75.75 0 00.93.875l5.174-1.61A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.721 9.721 0 01-4.975-1.364l-.356-.214-3.695 1.15 1.1-3.613-.233-.37A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z" />
+                    </svg>
+                  }
+                  href={`https://wa.me/${CONTACT.whatsapp.replace(/[^0-9]/g, '')}`}
+                  label="WhatsApp Us"
+                  external
+                />
+                <ContactItem
+                  icon={
+                    <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                  }
+                  href={`mailto:${CONTACT.email}`}
+                  label={CONTACT.email}
+                />
+                <ContactItem
+                  icon={
+                    <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                  }
+                  href="https://maps.google.com/?q=The+Purple+Mango+Karla+Lonavala"
+                  label={CONTACT.address}
+                  external
+                />
+              </div>
             </address>
 
             {/* Social icons */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3.5 pt-1">
               {SOCIAL.map(({ label, href, icon }) => (
                 <a
                   key={label}
@@ -136,11 +138,11 @@ export default function Footer() {
           </div>
 
           {/* ── Center: Google Map ── */}
-          <div className="flex flex-col gap-4">
-            <p className="font-montserrat text-xs font-semibold tracking-[0.18em] uppercase text-gold">
-              Find Us
-            </p>
-            <div className="rounded-2xl overflow-hidden border border-white/10" style={{ height: '280px' }}>
+          <div className="flex flex-col gap-3.5 sm:gap-4">
+            <span className="font-montserrat text-[12px] sm:text-[13px] font-normal tracking-[0.24em] uppercase text-gold-light">
+              FIND US
+            </span>
+            <div className="rounded-2xl overflow-hidden border border-white/15 shadow-card" style={{ height: '300px' }}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.4!2d73.4758!3d18.7582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be80ab0a7abc567%3A0x1234567890abcdef!2sThe%20Purple%20Mango!5e0!3m2!1sen!2sin!4v1694000000000!5m2!1sen!2sin"
                 width="100%"
@@ -155,10 +157,10 @@ export default function Footer() {
           </div>
 
           {/* ── Right: Reservation Enquiry Form ── */}
-          <div className="flex flex-col gap-4">
-            <p className="font-montserrat text-xs font-semibold tracking-[0.18em] uppercase text-gold">
-              Reservation Enquiry
-            </p>
+          <div className="flex flex-col gap-3.5 sm:gap-4">
+            <span className="font-montserrat text-[12px] sm:text-[13px] font-normal tracking-[0.24em] uppercase text-gold-light">
+              RESERVATION ENQUIRY
+            </span>
             <ContactForm />
           </div>
         </div>
@@ -167,10 +169,10 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="container-resort py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-montserrat text-xs text-white/40">
+          <p className="font-montserrat text-xs text-white/50 font-normal">
             © {new Date().getFullYear()} The Purple Mango Resort. All rights reserved.
           </p>
-          <nav aria-label="Footer legal links" className="flex items-center gap-5">
+          <nav aria-label="Footer legal links" className="flex items-center gap-6">
             {[
               { label: 'Privacy Policy', href: '/privacy' },
               { label: 'Terms & Conditions', href: '/terms' },
@@ -179,7 +181,7 @@ export default function Footer() {
               <Link
                 key={href}
                 href={href}
-                className="font-montserrat text-xs text-white/40 hover:text-white/80 transition-colors duration-200"
+                className="font-montserrat text-xs text-white/50 hover:text-white transition-colors duration-200"
               >
                 {label}
               </Link>

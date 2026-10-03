@@ -1,37 +1,36 @@
 import Link from 'next/link'
-import SectionLabel from '@/components/ui/SectionLabel'
 import RoomCard from '@/components/ui/RoomCard'
 
 const ROOMS = [
   {
-    name: 'The Studio',
+    name: 'The Studio Room',
     description:
-      'An intimate, thoughtfully designed space for two, featuring panoramic hill windows, bespoke wooden furnishings and curated amenities.',
-    price: '₹8,500 / night',
+      'For couples and short stays. A comfortable double bed, a spacious washroom and a cozy sitting area...',
     imageSrc: '/images/rooms/studio.jpg',
-    imageAlt: 'The Studio room at The Purple Mango with panoramic hill views and warm wooden furnishings',
+    imageAlt: 'The Studio Room at The Purple Mango with mountain views',
     href: '/contact',
-    featured: false,
+    aspectRatio: 'aspect-[4/3.2]',
+    className: '',
   },
   {
-    name: 'Deluxe Haven',
+    name: 'Deluxe Haven AC Room',
     description:
-      'Expansive interiors, a private outdoor seating area offering an immersive view of the valley and the voices of the hills.',
-    price: '₹12,000 / night',
+      'Built for families. More floor space, a proper seating area for the group and modern washroom fittings...',
     imageSrc: '/images/rooms/deluxe-haven.jpg',
-    imageAlt: 'Deluxe Haven suite at The Purple Mango with warm-toned living area and valley views',
+    imageAlt: 'Deluxe Haven AC Room suite at The Purple Mango with valley views',
     href: '/contact',
-    featured: true,
+    aspectRatio: 'aspect-[4/3.5]',
+    className: 'md:-mt-6 lg:-mt-8',
   },
   {
-    name: 'Super Deluxe',
+    name: 'Super Deluxe AC Room',
     description:
-      'Our most spacious offering: study, rest and an ultimate relaxation with premium lounges, deep soaking tub and sweeping vistas.',
-    price: '₹16,000 / night',
+      'The top tier: a separate living area, bathtub and the largest entertainment setup on the property, extra...',
     imageSrc: '/images/rooms/super-deluxe.jpg',
-    imageAlt: 'Super Deluxe suite at The Purple Mango with luxury pool and sweeping Western Ghats views',
+    imageAlt: 'Super Deluxe AC Room at The Purple Mango with luxury lounge and mountain view',
     href: '/contact',
-    featured: false,
+    aspectRatio: 'aspect-[4/3.2]',
+    className: '',
   },
 ]
 
@@ -40,42 +39,34 @@ export default function RoomsSection() {
     <section
       id="rooms"
       aria-labelledby="rooms-heading"
-      className="bg-white section-padding"
+      className="bg-[#FBF2ED] section-padding"
     >
       <div className="container-resort">
         {/* ── Header Row ── */}
-        <div className="flex flex-col gap-3 mb-12">
-          <SectionLabel withLine>Residences</SectionLabel>
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12 lg:mb-16">
+          <div className="flex flex-col gap-2.5 sm:gap-3">
+            <span className="font-montserrat text-[12px] sm:text-[13px] font-normal tracking-[0.24em] uppercase text-purple-muted">
+              ROOMS & STAY
+            </span>
             <h2
               id="rooms-heading"
-              className="font-playfair text-4xl lg:text-5xl font-semibold text-purple-heading"
+              className="font-playfair text-3xl sm:text-4xl lg:text-[2.65rem] font-normal text-purple-heading leading-[1.14] sm:leading-[1.15] tracking-tight"
             >
               Sanctuaries of Comfort
             </h2>
-            <Link
-              href="/rooms"
-              id="rooms-view-all-link"
-              className="inline-flex items-center gap-2 font-montserrat text-sm font-semibold text-purple-heading hover:text-gold transition-colors duration-200 group flex-shrink-0"
-              aria-label="View all suites and rooms"
-            >
-              View All Suites
-              <svg
-                className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-                aria-hidden="true"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
           </div>
+
+          <Link
+            href="/contact"
+            id="rooms-book-stay-btn"
+            className="inline-flex items-center justify-center font-montserrat font-medium sm:font-semibold text-[13px] sm:text-[14px] tracking-normal border border-purple-heading/80 hover:border-purple-heading text-purple-heading px-8 py-3.5 rounded-xl hover:bg-purple-heading hover:text-white transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-heading self-start sm:self-end text-center select-none"
+          >
+            Book Your Stay Now
+          </Link>
         </div>
 
         {/* ── Cards Grid ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-7 lg:gap-9 items-start">
           {ROOMS.map((room) => (
             <RoomCard key={room.name} {...room} />
           ))}
